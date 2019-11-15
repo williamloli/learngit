@@ -1,0 +1,12 @@
+ctrl+a到最前面
+执行拷贝命令
+# docker cp nexus.war tomcat:/usr/local/tomcat/webapps
+docker exec -it tomcat /bin/bash
+
+以上方法很不安全 因为它的数据只放在容器里面，所以一定要把目录挂载出来 容器挂了没关系，只要数据在就可以
+vim /etc/sysconfig/network-scripts/ifcfg-ens33配置IPBOOTPROTO=static
+IPADDR= 
+NETMASK=  
+GATEWAY=  
+DNS1=
+systemctl restart network.service 
